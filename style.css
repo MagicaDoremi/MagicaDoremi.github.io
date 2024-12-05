@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Helvetica;
   margin: 0;
   padding: 0;
   background-color: #f6d8e7; /* Color de fondo */
@@ -13,7 +13,7 @@ body {
 /* Imagen centrada */
 body::before {
   content: "";
-  background-image: url(B.jpg); /* Cambia por la ruta de tu imagen */
+  background-image: url(A.jpg); /* Cambia por la ruta de tu imagen */
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain; /* Asegura que no se deforme */
