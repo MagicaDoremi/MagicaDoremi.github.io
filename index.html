@@ -14,19 +14,19 @@
   <main>
     <form id="episodeSelector" onsubmit="goToEpisode(event)">
       <label for="season">Selecciona una temporada:</label>
-      <select id="season" name="season" required>
+      <select id="season" name="season" required onchange="updateEpisodes()">
         <option value="" disabled selected>Elige una temporada</option>
         <option value="1">Temporada 1</option>
         <option value="2">Temporada 2</option>
         <option value="3">Temporada 3</option>
+        <option value="4">Temporada 4</option>
+        <option value="5">Temporada 5</option>
+        <option value="6">Temporada 6</option>
       </select>
 
       <label for="episode">Selecciona un episodio:</label>
       <select id="episode" name="episode" required>
         <option value="" disabled selected>Elige un episodio</option>
-        <option value="1">Episodio 1</option>
-        <option value="2">Episodio 2</option>
-        <option value="3">Episodio 3</option>
       </select>
 
       <div class="button-container">
@@ -43,32 +43,53 @@
   <script>
     // Mapa con enlaces de episodios organizados por temporada y capítulo
     const episodeLinks = {
-      "1": { "1": "https://drive.google.com/file/d/18mfHnUwtMpUuZEa55gtseakZL17FmH-r/preview", "2": "https://drive.google.com/uc?id=ID_EPISODIO_T1E2", "3": "https://drive.google.com/uc?id=ID_EPISODIO_T1E3" },
-      "2": { "1": "https://drive.google.com/uc?id=ID_EPISODIO_T2E1", "2": "https://drive.google.com/uc?id=ID_EPISODIO_T2E2", "3": "https://drive.google.com/uc?id=ID_EPISODIO_T2E3" },
-      "3": { "1": "https://drive.google.com/uc?id=ID_EPISODIO_T3E1", "2": "https://drive.google.com/uc?id=ID_EPISODIO_T3E2", "3": "https://drive.google.com/uc?id=ID_EPISODIO_T3E3" }
+      "1": Array.from({ length: 51 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T1E${i + 1}`),
+      "2": Array.from({ length: 49 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T2E${i + 1}`),
+      "3": Array.from({ length: 50 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T3E${i + 1}`),
+      "4": Array.from({ length: 51 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T4E${i + 1}`),
+      "5": Array.from({ length: 13 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T5E${i + 1}`),
+      "6": ["https://drive.google.com/uc?id=ID_EPISODIO_T6E1"]
     };
 
-    // Función para redirigir al episodio seleccionado
+    // Actualiza la lista de episodios disponibles según la temporada seleccionada
+    function updateEpisodes() {
+      const season = document.getElementById("season").value;
+      const episodeSelect = document.getElementById("episode");
+
+      episodeSelect.innerHTML = '<option value="" disabled selected>Elige un episodio</option>';
+
+      if (season && episodeLinks[season]) {
+        episodeLinks[season].forEach((_, index) => {
+          const episodeNumber = index + 1;
+          const option = document.createElement("option");
+          option.value = episodeNumber;
+          option.textContent = `Episodio ${episodeNumber}`;
+          episodeSelect.appendChild(option);
+        });
+      }
+    }
+
+    // Redirige al episodio seleccionado
     function goToEpisode(event) {
       event.preventDefault(); // Evita que el formulario recargue la página
       const season = document.getElementById("season").value;
       const episode = document.getElementById("episode").value;
 
-      if (season && episode && episodeLinks[season][episode]) {
-        window.location.href = episodeLinks[season][episode];
+      if (season && episode && episodeLinks[season][episode - 1]) {
+        window.location.href = episodeLinks[season][episode - 1];
       } else {
         alert("Por favor, selecciona una temporada y un episodio válidos.");
       }
     }
 
-    // Función para reproducir un episodio aleatorio
+    // Reproduce un episodio aleatorio
     function playRandomEpisode() {
       const seasons = Object.keys(episodeLinks);
       const randomSeason = seasons[Math.floor(Math.random() * seasons.length)];
-      const episodes = Object.keys(episodeLinks[randomSeason]);
-      const randomEpisode = episodes[Math.floor(Math.random() * episodes.length)];
+      const episodes = episodeLinks[randomSeason];
+      const randomEpisodeIndex = Math.floor(Math.random() * episodes.length);
 
-      const randomLink = episodeLinks[randomSeason][randomEpisode];
+      const randomLink = episodes[randomEpisodeIndex];
       window.location.href = randomLink; // Redirige al episodio aleatorio
     }
   </script>
