@@ -43,13 +43,77 @@
   <script>
     // Mapa con enlaces de episodios organizados por temporada y capítulo
     const episodeLinks = {
-      "1": Array.from({ length: 51 }, (_, i) => `https://drive.google.com/file/d/1-1dAQtKo_PnIzAz8j0vYOq9VDW2dIHcA/view?usp=drive_link, https://drive.google.com/file/d/1Zgbn0lvhphDPhQb1QY_gttwYGKEtbuM6/view?usp=drive_link, https://drive.google.com/file/d/1-1yYjWKuaHTsJcGriK-Z1m0GRunahm_R/view?usp=drive_link, https://drive.google.com/file/d/1-JmmBJdHyoKy5zFrvWmv07SA18ycyX9M/view?usp=drive_link, https://drive.google.com/file/d/1-T87rOUzfYtqLtqIRMWqowR6B8-Wr0qb/view?usp=drive_link, https://drive.google.com/file/d/1-ToT4xyNGnw6wF122-rTvXS2ziiaM3CB/view?usp=drive_link, https://drive.google.com/file/d/1-XGSXpWpF8RUnWzp2JjbRUQoQVkotq2V/view?usp=drive_link, https://drive.google.com/file/d/1-gRdaRq6VKWuNX9DsG28-PoKCsB1u34Y/view?usp=drive_link, https://drive.google.com/file/d/1-pY6nXaSmV4t8tmGxuhTuhBXEWa5jqTT/view?usp=drive_link, https://drive.google.com/file/d/1-tRzzDkIOalevOnURS9Ts5zvwyHiY4up/view?usp=drive_link, https://drive.google.com/file/d/10-vIx8Gm1D2oLSQVNnttInDvn8MduFGE/view?usp=drive_link, https://drive.google.com/file/d/1-uxVSLRztu7xYi4YMNqS_SuNHUZIIJ9U/view?usp=drive_link, https://drive.google.com/file/d/10JBkTTYBUaSoUuvcD963luqrzQRlJyHr/view?usp=drive_link, https://drive.google.com/file/d/103z1dJMm5z9biY0w838clWVCVFqRr5V1/view?usp=drive_link, https://drive.google.com/file/d/10D4qOjH-_q4b8V-3CDqip19eizHfsFHd/view?usp=drive_link, https://drive.google.com/file/d/10Ot15IF70Vjr9QdWcSaqCmkfZKjyVPvL/view?usp=drive_link, https://drive.google.com/file/d/10NvN2JjFMxxMl2BkOzanF9KZYSWq1RN0/view?usp=drive_link, https://drive.google.com/file/d/10XdQIHoA8p4kcCQd4XxeV0w8tfQ0GbfM/view?usp=drive_link, https://drive.google.com/file/d/10PRlRy2EiiKmzEHzkuY2b-qLh8j-iaC3/view?usp=drive_link, https://drive.google.com/file/d/10eVMnFLlp24Sa86yn2STPOhtbBOIoEt9/view?usp=drive_link, https://drive.google.com/file/d/10gF9Psw_jp3Ztiaue99latOUlUloP5uR/view?usp=drive_link, https://drive.google.com/file/d/10iRLb1ZntCpgZWcxRAMoa9etbzQw7A13/view?usp=drive_link, https://drive.google.com/file/d/116y9HItaoTN4XrnwR8bmPamXpbktsC_O/view?usp=drive_link, https://drive.google.com/file/d/10ibR98SZdkg0NqBL4m-GYP0gFkpx2SAh/view?usp=drive_link, https://drive.google.com/file/d/11P95fi0lwf0KtXSRdDXeXHEHntk_5wkq/view?usp=drive_link, https://drive.google.com/file/d/11ADe6nKNSEGJXVxDJ7IlcooTrgMU8tC9/view?usp=drive_link, https://drive.google.com/file/d/11HuQdLmAHSBlkqw2AGVBDuXhL5c7QiE8/view?usp=drive_link, https://drive.google.com/file/d/11J9FoWh5-TTVsRuzomgHddhNNREXKw4-/view?usp=drive_link, https://drive.google.com/file/d/11NydCaKo_tVO3D1ArZP0002jVghqZrZf/view?usp=drive_link, https://drive.google.com/file/d/11KBYVXF5sA9Dy5AwTPaVlwyKbVx4YcjI/view?usp=drive_link, https://drive.google.com/file/d/10rFhlKuBvc59SZx8wkFU16IHfRIk3bIf/view?usp=drive_link, https://drive.google.com/file/d/11LgrPxu_TG9692LulrtQC146q5Pt_REt/view?usp=drive_link, https://drive.google.com/file/d/10z3DZobgP9VFIRVmkxWKlghjibaP1224/view?usp=drive_link, https://drive.google.com/file/d/112S4bWSOXn2KorsTOIsNfMk8dhIGw0GM/view?usp=drive_link, https://drive.google.com/file/d/10r5lOpWFFIrHFt-dO8l-kqrkTIOTdQFH/view?usp=drive_link, https://drive.google.com/file/d/12bKkzcHTQ83Dkx_AUf7QLOn6pyS7tauR/view?usp=drive_link, https://drive.google.com/file/d/11mUnHQrHgoVUnJeH6FOP89iSJEy9POxZ/view?usp=drive_link, https://drive.google.com/file/d/11r6vauiFg21-PGxoORnNZOBqilpZLhai/view?usp=drive_link, https://drive.google.com/file/d/12RvHN8G12ag0icJM-mhvsPACha4Tm1Mi/view?usp=drive_link, https://drive.google.com/file/d/121vSSsrs33Y2435ZDlk-lONWpKYXdLsh/view?usp=drive_link, https://drive.google.com/file/d/12-luXO0BrrVHWVtxETAv4YqIh2UuduJN/view?usp=drive_link, https://drive.google.com/file/d/110J1eBX7D1HUeFFLxCBYXT1GHD0-Dg-f/view?usp=drive_link, https://drive.google.com/file/d/124V_WjW9XooXu0Pb0r6eVdfQyjAEREQD/view?usp=drive_link, https://drive.google.com/file/d/12O4W_xszTF1BN6FZr4TbPv-xWG8ihXe0/view?usp=drive_link, https://drive.google.com/file/d/12V5pCNJrd3stgLkNPLNjTCpSNCAxu-rk/view?usp=drive_link, https://drive.google.com/file/d/12GCcqTNOSwbb8hpPgGJxrKWN5CkkOuev/view?usp=drive_link, https://drive.google.com/file/d/12I-eb5IoKEhpKmvRqRY6Ke7k7KXTfR3e/view?usp=drive_link, https://drive.google.com/file/d/11h1sKFkq5D4tFrAjYDJxpac2k049hudG/view?usp=drive_link, https://drive.google.com/file/d/11ZOzrr9mmCgI1V-xsBdzOwl8nMc5DI9I/view?usp=drive_link, https://drive.google.com/file/d/11X0Lsb3NTxQJItMwP2Nbb6HbhS5f4ZPZ/view?usp=drive_link, https://drive.google.com/file/d/111ObUpAZQH6IDWqItPDs_qTd5x7kpiGp/view?usp=drive_link`),
+      "1": Array.from({ length: 51 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T1E${i + 1}`),
       "2": Array.from({ length: 49 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T2E${i + 1}`),
       "3": Array.from({ length: 50 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T3E${i + 1}`),
       "4": Array.from({ length: 51 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T4E${i + 1}`),
       "5": Array.from({ length: 13 }, (_, i) => `https://drive.google.com/uc?id=ID_EPISODIO_T5E${i + 1}`),
       "6": ["https://drive.google.com/uc?id=ID_EPISODIO_T6E1"]
     };
+
+    // Script para generar los links de episodios
+const generateEpisodeLinks = () => {
+  const episodeLinks = {
+    "1": [
+      "https://drive.google.com/file/d/1-1dAQtKo_PnIzAz8j0vYOq9VDW2dIHcA/view?usp=drive_link",
+      "https://drive.google.com/file/d/1Zgbn0lvhphDPhQb1QY_gttwYGKEtbuM6/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-1yYjWKuaHTsJcGriK-Z1m0GRunahm_R/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-JmmBJdHyoKy5zFrvWmv07SA18ycyX9M/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-T87rOUzfYtqLtqIRMWqowR6B8-Wr0qb/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-ToT4xyNGnw6wF122-rTvXS2ziiaM3CB/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-XGSXpWpF8RUnWzp2JjbRUQoQVkotq2V/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-gRdaRq6VKWuNX9DsG28-PoKCsB1u34Y/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-pY6nXaSmV4t8tmGxuhTuhBXEWa5jqTT/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-tRzzDkIOalevOnURS9Ts5zvwyHiY4up/view?usp=drive_link",
+      "https://drive.google.com/file/d/10-vIx8Gm1D2oLSQVNnttInDvn8MduFGE/view?usp=drive_link",
+      "https://drive.google.com/file/d/1-uxVSLRztu7xYi4YMNqS_SuNHUZIIJ9U/view?usp=drive_link",
+      "https://drive.google.com/file/d/10JBkTTYBUaSoUuvcD963luqrzQRlJyHr/view?usp=drive_link",
+      "https://drive.google.com/file/d/103z1dJMm5z9biY0w838clWVCVFqRr5V1/view?usp=drive_link",
+      "https://drive.google.com/file/d/10D4qOjH-_q4b8V-3CDqip19eizHfsFHd/view?usp=drive_link",
+      "https://drive.google.com/file/d/10Ot15IF70Vjr9QdWcSaqCmkfZKjyVPvL/view?usp=drive_link",
+      "https://drive.google.com/file/d/10NvN2JjFMxxMl2BkOzanF9KZYSWq1RN0/view?usp=drive_link",
+      "https://drive.google.com/file/d/10XdQIHoA8p4kcCQd4XxeV0w8tfQ0GbfM/view?usp=drive_link",
+      "https://drive.google.com/file/d/10PRlRy2EiiKmzEHzkuY2b-qLh8j-iaC3/view?usp=drive_link",
+      "https://drive.google.com/file/d/10eVMnFLlp24Sa86yn2STPOhtbBOIoEt9/view?usp=drive_link",
+      "https://drive.google.com/file/d/10gF9Psw_jp3Ztiaue99latOUlUloP5uR/view?usp=drive_link",
+      "https://drive.google.com/file/d/10iRLb1ZntCpgZWcxRAMoa9etbzQw7A13/view?usp=drive_link",
+      "https://drive.google.com/file/d/116y9HItaoTN4XrnwR8bmPamXpbktsC_O/view?usp=drive_link",
+      "https://drive.google.com/file/d/10ibR98SZdkg0NqBL4m-GYP0gFkpx2SAh/view?usp=drive_link",
+      "https://drive.google.com/file/d/11P95fi0lwf0KtXSRdDXeXHEHntk_5wkq/view?usp=drive_link",
+      "https://drive.google.com/file/d/11ADe6nKNSEGJXVxDJ7IlcooTrgMU8tC9/view?usp=drive_link",
+      "https://drive.google.com/file/d/11HuQdLmAHSBlkqw2AGVBDuXhL5c7QiE8/view?usp=drive_link",
+      "https://drive.google.com/file/d/11J9FoWh5-TTVsRuzomgHddhNNREXKw4-/view?usp=drive_link",
+      "https://drive.google.com/file/d/11NydCaKo_tVO3D1ArZP0002jVghqZrZf/view?usp=drive_link",
+      "https://drive.google.com/file/d/11KBYVXF5sA9Dy5AwTPaVlwyKbVx4YcjI/view?usp=drive_link",
+      "https://drive.google.com/file/d/10rFhlKuBvc59SZx8wkFU16IHfRIk3bIf/view?usp=drive_link",
+      "https://drive.google.com/file/d/11LgrPxu_TG9692LulrtQC146q5Pt_REt/view?usp=drive_link",
+      "https://drive.google.com/file/d/10z3DZobgP9VFIRVmkxWKlghjibaP1224/view?usp=drive_link",
+      "https://drive.google.com/file/d/112S4bWSOXn2KorsTOIsNfMk8dhIGw0GM/view?usp=drive_link",
+      "https://drive.google.com/file/d/10r5lOpWFFIrHFt-dO8l-kqrkTIOTdQFH/view?usp=drive_link",
+      "https://drive.google.com/file/d/12bKkzcHTQ83Dkx_AUf7QLOn6pyS7tauR/view?usp=drive_link",
+      "https://drive.google.com/file/d/11mUnHQrHgoVUnJeH6FOP89iSJEy9POxZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/11r6vauiFg21-PGxoORnNZOBqilpZLhai/view?usp=drive_link",
+      "https://drive.google.com/file/d/12RvHN8G12ag0icJM-mhvsPACha4Tm1Mi/view?usp=drive_link",
+      "https://drive.google.com/file/d/121vSSsrs33Y2435ZDlk-lONWpKYXdLsh/view?usp=drive_link",
+      "https://drive.google.com/file/d/12-luXO0BrrVHWVtxETAv4YqIh2UuduJN/view?usp=drive_link",
+      "https://drive.google.com/file/d/110J1eBX7D1HUeFFLxCBYXT1GHD0-Dg-f/view?usp=drive_link",
+      "https://drive.google.com/file/d/124V_WjW9XooXu0Pb0r6eVdfQyjAEREQD/view?usp=drive_link",
+      "https://drive.google.com/file/d/12O4W_xszTF1BN6FZr4TbPv-xWG8ihXe0/view?usp=drive_link",
+      "https://drive.google.com/file/d/12V5pCNJrd3stgLkNPLNjTCpSNCAxu-rk/view?usp=drive_link",
+      "https://drive.google.com/file/d/12GCcqTNOSwbb8hpPgGJxrKWN5CkkOuev/view?usp=drive_link",
+      "https://drive.google.com/file/d/12I-eb5IoKEhpKmvRqRY6Ke7k7KXTfR3e/view?usp=drive_link",
+      "https://drive.google.com/file/d/11h1sKFkq5D4tFrAjYDJxpac2k049hudG/view?usp=drive_link",
+      "https://drive.google.com/file/d/11ZOzrr9mmCgI1V-xsBdzOwl8nMc5DI9I/view?usp=drive_link",
+      "https://drive.google.com/file/d/11X0Lsb3NTxQJItMwP2Nbb6HbhS5f4ZPZ/view?usp=drive_link",
+      "https://drive.google.com/file/d/111ObUpAZQH6IDWqItPDs_qTd5x7kpiGp/view?usp=drive_link",
+    ],
+  };
+  return episodeLinks;
+};
+
+// Ejemplo de uso
+const links = generateEpisodeLinks();
+console.log(links["1"]); // Devuelve todos los links de la temporada 1
 
     // Actualiza la lista de episodios disponibles según la temporada seleccionada
     function updateEpisodes() {
