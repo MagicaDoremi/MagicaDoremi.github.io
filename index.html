@@ -15,23 +15,23 @@
     <form id="episodeSelector" onsubmit="goToEpisode(event)">
       <label for="season">Selecciona una temporada:</label>
       <select id="season" name="season" required onchange="updateEpisodes()">
-        <option value="" disabled selected>Elige una temporada</option>
+        <option value="" disabled selected>Temporades</option>
         <option value="1">Temporada 1</option>
         <option value="2">Temporada 2</option>
         <option value="3">Temporada 3</option>
         <option value="4">Temporada 4</option>
-        <option value="5">Temporada 5</option>
-        <option value="6">Temporada 6</option>
+        <option value="5">OVA</option>
+        <option value="6">Pel·lícula</option>
       </select>
 
-      <label for="episode">Selecciona un episodio:</label>
+      <label for="episode">Selecciona un episodi:</label>
       <select id="episode" name="episode" required>
-        <option value="" disabled selected>Elige un episodio</option>
+        <option value="" disabled selected>Escull un episodi</option>
       </select>
 
       <div class="button-container">
-        <button type="submit" class="btn-primary">Reproducir</button>
-        <button type="button" class="btn-secondary" onclick="playRandomEpisode()">Aleatorio</button>
+        <button type="submit" class="btn-primary">Reprodueix</button>
+        <button type="button" class="btn-secondary" onclick="playRandomEpisode()">Aleatori</button>
       </div>
     </form>
   </main>
