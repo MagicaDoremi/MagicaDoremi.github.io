@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seleccionar Episodio</title>
+  <title></title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -278,7 +278,7 @@
       const season = document.getElementById("season").value;
       const episodeSelect = document.getElementById("episode");
 
-      episodeSelect.innerHTML = '<option value="" disabled selected>Elige un episodio</option>';
+      episodeSelect.innerHTML = '<option value="" disabled selected>Escull un episodi</option>';
 
       if (season && episodeLinks[season]) {
         episodeLinks[season].forEach((_, index) => {
