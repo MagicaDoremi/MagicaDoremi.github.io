@@ -111,12 +111,16 @@ button:hover {
   background-color: #ccc;
 }
 
-/* Footer */
 footer {
+  position: relative; /* o fixed si quieres que siempre esté visible */
+  z-index: 10;        /* mayor que la imagen de fondo (que tiene z-index: 0) */
   margin-top: 20px;
   text-align: center;
   font-size: 16px;
+  background-color: rgba(246, 216, 231, 0.9); /* opcional: fondo semi-transparente para que se vea */
+  padding: 5px;
 }
+
 
 #easterEggTrigger {
   color: #414040;
@@ -124,3 +128,4 @@ footer {
   cursor: pointer;
   text-decoration: underline;
 }
+
