@@ -35,39 +35,40 @@
       </div>
     </form>
   </main>
+<footer>
+  Escribe aquí la palabra <span class="easter-egg">misterio</span>
+</footer>
 
-  <footer>
-      <span id="easterEggTrigger">...</span>
-  </footer>
-  
-  <div id="easterEggOverlay">
-  <div id="easterEggContent">
-    <img id="easterEggImage" src="tu-imagen.jpg" alt="Easter Egg">
-    <button id="closeEasterEgg">✖</button>
-  </div>
+<!-- Overlay para el easter egg -->
+<div id="easterEggOverlay">
+  <span class="close-btn">&times;</span>
+  <img src="tu-imagen.jpg" alt="Easter Egg">
 </div>
-  
+
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const trigger = document.getElementById("easterEggTrigger");
-    const overlay = document.getElementById("easterEggOverlay");
-    const closeBtn = document.getElementById("closeEasterEgg");
+  // Seleccionamos elementos
+  const easterEgg = document.querySelector('.easter-egg');
+  const overlay = document.getElementById('easterEggOverlay');
+  const closeBtn = overlay.querySelector('.close-btn');
 
-    trigger.addEventListener("click", () => {
-      overlay.style.display = "flex";
-    });
+  // Mostrar overlay al clicar la palabra
+  easterEgg.addEventListener('click', () => {
+    overlay.style.display = 'flex';
+  });
 
-    closeBtn.addEventListener("click", () => {
-      overlay.style.display = "none";
-    });
+  // Cerrar overlay al clicar la X
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
 
-    overlay.addEventListener("click", (e) => {
-      if(e.target === overlay) {
-        overlay.style.display = "none";
-      }
-    });
+  // También cerrar al clicar fuera de la imagen
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = 'none';
+    }
   });
 </script>
+
   
   <script>
     // Mapa con enlaces de episodios organizados por temporada y capítulo
