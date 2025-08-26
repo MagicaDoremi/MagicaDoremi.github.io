@@ -82,7 +82,7 @@ footer .easter-egg {
   cursor: pointer;
   color: #414040;
   font-weight: bold;
-  text-decoration: underline;
+ 
 }
 
 /* Overlay para la imagen del easter egg */
@@ -116,3 +116,4 @@ footer .easter-egg {
   cursor: pointer;
   font-weight: bold;
 }
+
