@@ -6,6 +6,65 @@
   <title></title>
   <link rel="stylesheet" href="style.css">
 </head>
+  <!-- Overlay para el easter egg -->
+<div id="easterEggOverlay" style="
+  display:none; 
+  position:fixed; 
+  top:0; 
+  left:0; 
+  width:100%; 
+  height:100%; 
+  background:rgba(0,0,0,0.7); 
+  justify-content:center; 
+  align-items:center;
+  z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <img id="easterEggImage" src="A.png" alt="Easter Egg" style="max-width:90vw; max-height:90vh;">
+    <button id="closeEasterEgg" style="
+      position:absolute; 
+      top:-10px; 
+      right:-10px; 
+      background:#fff; 
+      border:none; 
+      border-radius:50%; 
+      width:30px; 
+      height:30px; 
+      cursor:pointer; 
+      font-size:18px;">✖</button>
+  </div>
+</div>
+<!-- Overlay para el easter egg -->
+<div id="easterEggOverlay" style="
+  display:none; 
+  position:fixed; 
+  top:0; 
+  left:0; 
+  width:100%; 
+  height:100%; 
+  background:rgba(0,0,0,0.7); 
+  justify-content:center; 
+  align-items:center;
+  z-index:1000;">
+  <div style="position:relative; display:inline-block;">
+    <img id="easterEggImage" src="URL_DE_TU_IMAGEN" alt="Easter Egg" style="
+      max-width:90vw; 
+      max-height:90vh; 
+      border-radius:8px; 
+      box-shadow:0 0 20px rgba(0,0,0,0.6);">
+    <button id="closeEasterEgg" style="
+      position:absolute; 
+      top:-10px; 
+      right:-10px; 
+      background:#fff; 
+      border:none; 
+      border-radius:50%; 
+      width:30px; 
+      height:30px; 
+      cursor:pointer; 
+      font-size:18px; 
+      box-shadow:0 2px 5px rgba(0,0,0,0.5);">✖</button>
+  </div>
+</div>
 <body>
   <header>
     <!-- Aquí puedes añadir un logo o título si lo deseas -->
@@ -13,7 +72,10 @@
 
   <main>
     <form id="episodeSelector" onsubmit="goToEpisode(event)">
-      <label for="season">Selecciona una temporada:</label>
+      <label for="season">
+  Selecciona una <span id="easterEggTrigger" style="cursor:pointer; text-decoration:underline;">temporada</span>:
+</label>
+
       <select id="season" name="season" required onchange="updateEpisodes()">
         <option value="" disabled selected>Temporades</option>
         <option value="1">Temporada 1</option>
@@ -41,6 +103,27 @@
   </footer>
 
   <script>
+    // Easter Egg: abrir imagen al clicar en "temporada"
+document.addEventListener("DOMContentLoaded", () => {
+  const trigger = document.getElementById("easterEggTrigger");
+  const overlay = document.getElementById("easterEggOverlay");
+  const closeBtn = document.getElementById("closeEasterEgg");
+
+  trigger.addEventListener("click", () => {
+    overlay.style.display = "flex";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+
+  // Cerrar si se hace clic fuera de la imagen
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+});
     // Mapa con enlaces de episodios organizados por temporada y capítulo
     const episodeLinks = {
       "1": [
@@ -317,3 +400,4 @@
   </script>
 </body>
 </html>
+
