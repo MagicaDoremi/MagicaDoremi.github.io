@@ -116,7 +116,7 @@ footer .easter-egg {
 
 #easterEggOverlay p {
   color: white;
-  font-size: 18px;
+  font-size: 24px;
 }
 
 /* Botón de cierre */
@@ -129,4 +129,5 @@ footer .easter-egg {
   color: white;
   cursor: pointer;
 }
+
 
