@@ -64,68 +64,55 @@ button:hover {
   background-color: #6a6a6a; /* Oscurece el botón al pasar el ratón */
 }
 
-/* Easter Egg Overlay */
+/* Footer siempre visible */
+footer {
+  position: fixed;       /* siempre visible */
+  bottom: 0;             /* en la parte inferior */
+  left: 0;
+  width: 100%;
+  z-index: 10;           /* encima de todo */
+  background-color: rgba(246, 216, 231, 0.9); /* fondo semi-transparente */
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+/* Palabra del easter egg */
+footer .easter-egg {
+  cursor: pointer;
+  color: #414040;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Overlay para la imagen del easter egg */
 #easterEggOverlay {
-  display: none; /* Por defecto oculto */
+  display: none;         /* oculto por defecto */
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8); /* Fondo semi-transparente */
+  background-color: rgba(0, 0, 0, 0.8); /* fondo oscuro semi-transparente */
+  z-index: 20;           /* encima de todo */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Encima de todo */
 }
 
-#easterEggContent {
-  position: relative;
+/* Imagen dentro del overlay */
+#easterEggOverlay img {
   max-width: 90%;
   max-height: 90%;
-}
-
-#easterEggContent img {
-  width: 100%;
-  height: auto;
-  display: block;
   border-radius: 8px;
 }
 
-#closeEasterEgg {
+/* Botón cerrar */
+#easterEggOverlay .close-btn {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  font-size: 18px;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#closeEasterEgg:hover {
-  background-color: #ccc;
-}
-
-footer {
-  position: relative; /* o fixed si quieres que siempre esté visible */
-  z-index: 10;        /* mayor que la imagen de fondo (que tiene z-index: 0) */
-  margin-top: 20px;
-  text-align: center;
-  font-size: 16px;
-  background-color: rgba(246, 216, 231, 0.9); /* opcional: fondo semi-transparente para que se vea */
-  padding: 5px;
-}
-
-
-#easterEggTrigger {
-  color: #414040;
   font-weight: bold;
-  cursor: pointer;
-  text-decoration: underline;
 }
-
