@@ -53,15 +53,14 @@
   height:100%;
   background:rgba(0,0,0,0.7);
   z-index:1000;
-  text-align:center;">
+  display:flex;
+  justify-content:center;
+  align-items:center;">
   
   <div id="easterEggContent" style="
-    display:inline-block;
     position:relative;
     max-width:90%;
-    max-height:90%;
-    margin:0 auto;
-    vertical-align:middle;">
+    max-height:90%;">
     
     <img id="easterEggImage" src="A.png" alt="Easter Egg" style="
       max-width:100%;
@@ -83,7 +82,7 @@
       box-shadow:0 2px 5px rgba(0,0,0,0.5);">✖</button>
   </div>
 </div>
-  
+
   <script>
     // Easter Egg: abrir imagen al clicar en "temporada"
     document.addEventListener("DOMContentLoaded", () => {
@@ -386,6 +385,7 @@
   </script>
 </body>
 </html>
+
 
 
 
